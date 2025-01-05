@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "95a5707a-2050-4156-9ecc-e7dae2b5a7d6",
+		"name": "entries_management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27390396",
+		"_collection_link": "https://universal-robot-708206.postman.co/workspace/My-Workspace~675729a4-c719-49b1-8793-056243ffe630/collection/27390396-95a5707a-2050-4156-9ecc-e7dae2b5a7d6?action=share&source=collection_link&creator=27390396"
+	},
+	"item": [
+		{
+			"name": "Create Entry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Juan\",\r\n    \"description\": \"Otro Juan ha morio\",\r\n    \"texts\": [\r\n        \"Sample text\"\r\n    ],\r\n    \"urls\": [\r\n        \"http://example.com\"\r\n    ],\r\n    \"files\": [\r\n        \"file1.pdf\"\r\n    ],\r\n    \"maps\": [\r\n        \"map_location\"\r\n    ],\r\n    \"userEntity\": null,\r\n    \"wikiEntity\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/entry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"entry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Entry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/entry?entryId=38b19e92-04db-4001-b441-b2132516628e&version=1.0.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"entry"
+					],
+					"query": [
+						{
+							"key": "entryId",
+							"value": "38b19e92-04db-4001-b441-b2132516628e"
+						},
+						{
+							"key": "version",
+							"value": "1.0.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Entry",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/entry?entryId=56bed942-500e-4afc-bc2e-c399c0a0b053&version=1.0.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"entry"
+					],
+					"query": [
+						{
+							"key": "entryId",
+							"value": "56bed942-500e-4afc-bc2e-c399c0a0b053"
+						},
+						{
+							"key": "version",
+							"value": "1.0.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Version Entry",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"entryId\": \"38b19e92-04db-4001-b441-b2132516628e\",\r\n    \"title\": \"newJuan\",\r\n    \"description\": \"newDescription\",\r\n    \"texts\": [\r\n        \"Sample text\"\r\n    ],\r\n    \"urls\": [\r\n        \"http://example.com\"\r\n    ],\r\n    \"files\": [\r\n        \"file1.pdf\"\r\n    ],\r\n    \"maps\": [\r\n        \"map_location\"\r\n    ],\r\n    \"userEntity\": null,\r\n    \"wikiEntity\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/entry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"entry"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
